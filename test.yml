@@ -1,0 +1,7 @@
+---
+- name : test file 
+  hosts : localhost
+  tasks :
+    - name : display a msg 
+      debug :
+        msg : hey i am test
