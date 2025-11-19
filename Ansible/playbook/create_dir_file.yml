@@ -1,0 +1,31 @@
+---
+  - name : create directoy & file and remove the file 
+    hosts : node1
+    tasks : 
+      - name : create a directory 
+        file : 
+          path : /home/student/new
+          state : directory  
+          owner : student 
+          group : student 
+          mode : 0755
+
+      - name : create a file 
+        file : 
+           path : /home/student/new/test.txt
+           state  : touch 
+      
+      - name : check the state 
+        stat : 
+          path : /home/student/new/test.txt
+        register : file_info 
+      
+      - name : display a msg 
+        debug :
+          msg : file is present 
+        when : file_info.stat.exists
+     
+      - name : remove the file 
+        file :
+          path : /home/student/new/test.txt
+          state : absent 

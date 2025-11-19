@@ -1,0 +1,13 @@
+---
+  - name : create a file with text 
+    hosts : node1
+    tasks : 
+      - name : create a file 
+        file : 
+          path : /home/student/new/info
+          state : touch
+        
+      - name : add a text 
+        blockinfile : 
+          path : /home/student/new/info
+          block : Hey i am "{{ ansible_hostname}}"

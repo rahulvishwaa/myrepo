@@ -1,0 +1,24 @@
+2025-11-19T17:20:01.508040+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2025-11-19T17:20:01.509677+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: 
+2025-11-19T17:20:01.509759+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:20:01.550513+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-11-19T17:20:01.809008+00:00 ERROR 'ansible_navigator.actions.collections._run_runner' Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:20:02.757923+00:00 ERROR 'ansible_navigator.actions.collections._parse' Unable to extract collection json from stdout
+2025-11-19T17:20:10.498850+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2025-11-19T17:20:10.499384+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: 
+2025-11-19T17:20:10.499465+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:20:10.537109+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-11-19T17:20:17.702661+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' Image inspection failed, image assumed to be corrupted or missing
+2025-11-19T17:20:17.703195+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stdout: 
+2025-11-19T17:20:17.703236+00:00 WARNING 'ansible_navigator.image_manager.puller._log_message' stderr: Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:20:17.734675+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-11-19T17:21:07.729409+00:00 ERROR 'ansible_navigator.actions.collections._run_runner' Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:21:08.582602+00:00 ERROR 'ansible_navigator.actions.collections._parse' Unable to extract collection json from stdout
+2025-11-19T17:21:16.620285+00:00 ERROR 'ansible_navigator.actions.collections._run_runner' Failed to obtain podman configuration: mkdir /run/user/0/libpod: permission denied
+
+2025-11-19T17:21:23.618020+00:00 ERROR 'ansible_navigator.actions.collections._parse' Unable to extract collection json from stdout

@@ -1,0 +1,27 @@
+---
+  - name : setup a websever
+    hosts : node1
+    become : yes
+    tasks :
+      - name : install httpd
+        yum :
+          name : httpd
+          state : present
+      - name : start the service 
+        service :
+          name : httpd
+          state : started
+      - name : open port on firewall
+        ansible.posix.firewalld :
+          port: 80/tcp
+          permanent: true
+          state: enabled
+        notify : reload firewalld  
+      - name : restart the service
+        service : 
+          name : httpd
+          state : reloaded
+      - name: reload firewalld
+        service :
+          name : firewalld
+          state: reloaded    

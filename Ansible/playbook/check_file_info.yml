@@ -1,0 +1,19 @@
+#The stat module in Ansible is used to retrieve facts about files, directories, or symbolic links on a managed node. It doesn’t modify anything — it just gathers information.
+
+---
+  - name : check the status of a file
+    hosts : node1
+    tasks : 
+      - name : check the status of a file
+        stat : 
+          path : /home/student/myinfo
+        register : fs
+
+      - name : print file info
+        debug :
+          msg : file info "{{ fs  }}"
+      
+      - name : print file presnet
+        debug :
+          msg : file is present
+        when : fs.stat.exists

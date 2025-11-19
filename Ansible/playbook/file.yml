@@ -1,0 +1,9 @@
+---
+  - name : file permission
+    hosts : node1
+    become : yes
+    tasks :
+      - name : change the permission of a file
+        file : 
+          path : /home/student/myinfo
+          mode : a+w

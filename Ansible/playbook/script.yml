@@ -1,0 +1,13 @@
+---
+  - name : 
+    hosts : node1
+    tasks: 
+      - name : run a script 
+        command : ./test.sh
+        args:  
+          chdir :  /home/student/new
+        register : message
+      
+      - name : print msg
+        debug:
+          msg : "{{ message.stdout }}"
