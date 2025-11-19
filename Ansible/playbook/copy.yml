@@ -1,0 +1,27 @@
+#copy a file with permission from ansible server to all remote hosts
+---
+  - name : copy a file 
+    hosts : all
+    become : yes
+    tasks :
+      - name : copy test file 
+        copy : 
+          src : /tmp/test.txt
+          dest : /tmp
+          owner : root
+          group : root
+          mode : 0644
+          backup : yes
+
+
+#copy a file from one location to another on a server
+
+  - name : copy file from a location to another
+    hosts : all
+    become : yes
+    tasks :
+      - name : file copy 
+        copy :
+          src : /tmp/myinfo
+          dest : /home/student/
+          remote_src : yes
