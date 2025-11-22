@@ -1,0 +1,17 @@
+---
+  - name : vgcreate 
+    hosts : "{{ server_name }}"
+    tasks :
+
+      vars_prompt:
+        - name: server_name
+          prompt: "Enter the server name/IP"
+          private: no
+
+        - name : create vg
+          lovl :
+            vg : my_vg
+            lv : my_lv
+            size : 5g
+            pvs : /dev/nvme0n2
+            state : present

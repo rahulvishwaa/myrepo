@@ -1,0 +1,13 @@
+---
+  - name :  user  creation 
+    hosts : node1
+    vars_files :
+      - password.yml
+    tasks : 
+       - name : create  user 
+         ansible.builtin.user:
+           name : ansible
+           shell : /bin/bash 
+           home : /user-home/ansible/
+           create_home : true
+           password : "{{ mypassword | password_hash ('sha512')}}"

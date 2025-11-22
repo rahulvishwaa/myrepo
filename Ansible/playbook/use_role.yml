@@ -1,0 +1,6 @@
+---
+- name: use role
+  hosts: node1
+  roles:
+    - webserver
+

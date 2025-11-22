@@ -1,0 +1,19 @@
+[student@ansibleser ~]$ ansible-console -i inventory.ini
+[WARNING]: Collection redhat.rhel_system_roles does not support Ansible version 2.14.18
+[WARNING]: Collection ansible.posix does not support Ansible version 2.14.18
+Welcome to the ansible console. Type help or ? to list commands.
+
+student@all (2)[f:5]#
+student@all (2)[f:5]#
+student@all (2)[f:5]# ls -lrth
+node1 | CHANGED | rc=0 >>
+total 8.0K
+-rw-rw-rw-. 1 root    root    15 Nov 19 20:54 myinfo
+drwxr-xr-x. 2 student student 33 Nov 20 00:08 new
+-rw-r--r--. 1 root    root     6 Nov 21 22:32 console_test
+node2 | CHANGED | rc=0 >>
+total 4.0K
+-rw-r--r--. 1 root root 6 Nov 21 22:32 console_test
+student@all (2)[f:5]#
+student@all (2)[f:5]#
+student@all (2)[f:5]#

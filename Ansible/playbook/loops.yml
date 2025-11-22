@@ -1,0 +1,13 @@
+---
+  - name : use loop 
+    hosts : node1
+    vars_files :
+      - var_file.yml
+    tasks : 
+      - name : create multiple files
+        file : 
+          path : "/tmp/{{ item }}"
+          state : touch
+          
+        loop : "{{files}}"
+     

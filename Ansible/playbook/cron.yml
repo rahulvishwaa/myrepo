@@ -1,0 +1,16 @@
+---
+  - name : schdule a cron
+    hosts : node1 
+    become : yes
+    tasks :
+
+      - name : cron test 
+        cron : 
+          name : cron job   # name of your cron
+          minute : "1"     # minute
+          hour :     "*"       # hour
+          day :      "*"      # days
+          weekday :  "*"       # weekday
+          month :    "*"     # month
+          user :     student       # user of cron
+          job :  "/home/student/new/test.sh >> /tmp/cron_out  2>&1"       # command or job to be executed

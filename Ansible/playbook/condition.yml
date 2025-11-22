@@ -1,0 +1,20 @@
+# Conditions
+
+
+---
+  - name : condition playbook 
+    hosts : localhost
+    
+    vars_prompt : 
+      - name : number
+        prompt : Enter a number
+        private : no
+
+    tasks :
+
+      - name : display msg 
+        debug :
+          msg : "correct choice  your input is {{number | int}}" 
+        when : number | int == 2  
+
+# it will excuted only if user enter 2 else it will not be executed        

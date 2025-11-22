@@ -1,0 +1,19 @@
+---
+  - name : down a package from internet
+    hosts : localhost
+    tasks : 
+      - name : create a dir 
+        file : 
+          path  : /opt/tomcat
+          state :  directory 
+          owner : root 
+          group : root
+          mode : 0755
+      
+      - name : download a file from internet 
+        get_url:
+          url : https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.112/bin/apache-tomcat-9.0.112.tar.gz
+          dest : /opt/tomcat
+          owner: student 
+          group: student 
+          mode : 0700

@@ -1,0 +1,18 @@
+# Handlers in Ansible are special tasks that run only when notified by other tasks.
+
+---
+  - name : use handlers
+    hosts : node1
+    tasks :
+      - name : copy a file
+        copy : 
+          src : /tmp/info
+          dest : /tmp
+        notify : demo_handlers
+        
+    handlers : 
+      - name : demo_handlers
+        debug :
+          msg : Hey i got changed 
+
+#in this play when anythig got changed in file then only handlers task will be executed.

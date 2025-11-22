@@ -1,0 +1,28 @@
+---
+  - name : create new storage
+    hosts : node1
+    become : yes 
+    tasks :
+      - name : create partition                     # this will create partition disk should be attached
+        community.general.parted :  
+          device : /dev/nvme0n2
+          state : present 
+          number : 1 
+          fs_type :  xfs 
+
+      - name : create a dir                         # this will create mount point 
+        file : 
+          path : /data
+          state : directory
+      
+      - name : make fs                              # this will format the FS will filesyetem type 
+        filesystem : 
+          dev : /dev/nvme0n2p1
+          fstype : xfs
+
+      - name : mount it 
+        mount :     
+          src : /dev/nvme0n2p1
+          path : /data
+          state : mounted
+          fstype : xfs

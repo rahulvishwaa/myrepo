@@ -1,0 +1,26 @@
+---
+  - name : lsblk output
+    hosts : "{{ server_name }}"
+    tasks : 
+    
+    vars_prompt:
+      - name: server_name
+      prompt: "Enter the server name/IP"
+      private: no
+
+      - name: fs_name
+      prompt: "Enter the filesystem/mount point path (e.g., /data, /opt)"
+      private: no
+
+      - name: size_gb
+      prompt: "How many GB do you want to add to the filesystem?"
+      private: no
+      
+
+      - name : 
+        lvol:
+          
+      
+
+
+          
